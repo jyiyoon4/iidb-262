@@ -1,0 +1,237 @@
+/* Basic Reset */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Page */
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+main > section {
+  margin-bottom: 60px;
+}
+
+/* Images */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* 1. User Profile Card */
+
+main > section:first-child > div {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+main > section:first-child img {
+  width: 100px;
+  height: 100px;
+}
+
+main > section:first-child button {
+  padding: 8px 16px;
+}
+
+/* 2. Global Navigation */
+
+header {
+  width: 100%;
+  min-width: 320px;
+  padding: 20px;
+}
+
+header nav {
+  margin: 20px 0;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+}
+
+header li {
+  margin-bottom: 8px;
+}
+
+/* 3. Blog Article List */
+
+main > section:nth-child(3) > div {
+  width: 100%;
+  max-width: 700px;
+}
+
+main > section:nth-child(3) article {
+  width: 100%;
+  padding: 20px 0;
+}
+
+main > section:nth-child(3) article + article {
+  margin-top: 20px;
+}
+
+main > section:nth-child(3) article img {
+  width: 200px;
+  height: 120px;
+}
+
+main > section:nth-child(3) article div {
+  margin-top: 16px;
+}
+
+/* 4. Video Thumbnail */
+
+main > section:nth-child(4) article {
+  width: 100%;
+  max-width: 500px;
+}
+
+main > section:nth-child(4) article img {
+  width: 100%;
+  height: auto;
+}
+
+main > section:nth-child(4) article div {
+  padding: 16px 0;
+}
+
+/* 5. Pricing Card */
+
+main > section:nth-child(5) > div {
+  width: 100%;
+  max-width: 400px;
+  min-width: 280px;
+  padding: 24px;
+}
+
+main > section:nth-child(5) ul {
+  padding-left: 20px;
+}
+
+main > section:nth-child(5) li {
+  margin-bottom: 8px;
+}
+
+main > section:nth-child(5) button {
+  padding: 10px 20px;
+}
+
+/* 6. Login Form */
+
+form {
+  width: 100%;
+  max-width: 400px;
+  min-width: 280px;
+  padding: 24px;
+}
+
+form > div {
+  margin-bottom: 16px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+form input {
+  width: 100%;
+  min-height: 40px;
+}
+
+form button {
+  margin-bottom: 16px;
+  padding: 10px 20px;
+}
+
+/* 7. Comment Thread */
+
+main > section:nth-child(7) > article {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+}
+
+main > section:nth-child(7) article img {
+  width: 60px;
+  height: 60px;
+}
+
+main > section:nth-child(7) article > div {
+  margin-top: 16px;
+}
+
+main > section:nth-child(7) article article {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/* 8. Pagination */
+
+main > section:nth-child(8) nav {
+  width: 100%;
+  padding: 20px;
+}
+
+main > section:nth-child(8) ul {
+  margin: 20px 0;
+  padding: 0;
+}
+
+main > section:nth-child(8) li {
+  margin-bottom: 8px;
+}
+
+main > section:nth-child(8) button {
+  padding: 8px 16px;
+}
+
+/* 9. Footer */
+
+footer {
+  width: 100%;
+  padding: 30px 20px;
+}
+
+footer nav {
+  margin: 20px 0;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+footer li {
+  margin-bottom: 8px;
+}
+
+/* 10. Toast */
+
+main > section:nth-child(10) aside {
+  width: 100%;
+  max-width: 400px;
+  min-width: 280px;
+  padding: 20px;
+}
+
+main > section:nth-child(10) aside > div {
+  margin-bottom: 12px;
+}
+
+main > section:nth-child(10) aside button {
+  padding: 4px 8px;
+}

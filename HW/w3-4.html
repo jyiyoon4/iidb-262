@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Pattern</title>
+  </head>
+  <body style="margin: 0; padding: 0">
+    <main
+      style="
+        display: block;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px;
+        box-sizing: border-box;
+      "
+    >
+      <!-- UI PATTERN 01 -->
+      <section style="display: block; margin-bottom: 100px">
+        <header style="display: block; margin-bottom: 24px">
+          <span style="display: inline-block; margin-right: 20px"
+            >UI 패턴 01</span
+          >
+          <h1 style="display: inline-block; margin: 0">USER PROFILE CARD</h1>
+        </header>
+
+        <article
+          style="
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            box-sizing: border-box;
+            text-align: center;
+          "
+        >
+          <figure
+            style="
+              display: block;
+              width: 82px;
+              height: 82px;
+              margin: 0 auto 16px;
+            "
+          >
+            <img
+              style="display: block; width: 80px; height: 80px"
+              src="https://avatars.githubusercontent.com/u/234168507?v=4&size=64"
+              alt="User Name 프로필 이미지"
+            />
+          </figure>
+
+          <header style="display: block; margin-bottom: 16px">
+            <h2 style="margin: 0 0 4px">User Name</h2>
+            <p style="margin: 0">Designer</p>
+          </header>
+
+          <button
+            style="
+              display: block;
+              width: 100%;
+              max-width: 300px;
+              margin: 0 auto;
+              padding: 8px 16px;
+              color: white;
+              background-color: black;
+              border: none;
+            "
+          >
+            VIEW PROFILE
+          </button>
+        </article>
+      </section>
+
+      <!-- UI PATTERN 02 -->
+      <section style="display: block; margin-bottom: 100px">
+        <header style="display: block; margin-bottom: 24px">
+          <span style="display: inline-block; margin-right: 20px"
+            >UI 패턴 02</span
+          >
+          <h1 style="display: inline-block; margin: 0">
+            GLOBAL NAVIGATION BAR
+          </h1>
+        </header>
+
+        <nav style="display: block; padding: 16px; box-sizing: border-box">
+          <header
+            style="
+              display: inline-block;
+              margin-right: 40px;
+              vertical-align: middle;
+            "
+          >
+            <!-- <img
+              style="
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+              "
+              src="https://placehold.co/30x30"
+              alt="GitHub"
+            /> -->
+            <svg
+              data-component="Octicon"
+              aria-hidden="true"
+              focusable="false"
+              class="octicon octicon-mark-github"
+              viewBox="0 0 24 24"
+              width="32"
+              height="32"
+              fill="currentColor"
+              display="inline-block"
+              overflow="visible"
+              style="
+                display: inline-block;
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                vertical-align: text-bottom;
+              "
+            >
+              <path
+                d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943"
+              ></path>
+            </svg>
+            <strong>GitHub</strong>
+          </header>
+
+          <ul
+            style="
+              display: inline-block;
+              margin: 0;
+              padding: 0;
+              vertical-align: middle;
+            "
+          >
+            <li style="display: inline-block; margin-right: 24px">
+              <a href="#">HOME</a>
+            </li>
+            <li style="display: inline-block; margin-right: 24px">
+              <a href="#">ABOUT</a>
+            </li>
+            <li style="display: inline-block; margin-right: 24px">
+              <a href="#">WORK</a>
+            </li>
+            <li style="display: inline-block; margin-right: 24px">
+              <a href="#">CONTACT</a>
+            </li>
+          </ul>
+
+          <button
+            style="
+              display: inline-block;
+              padding: 8px 16px;
+              vertical-align: middle;
+            "
+          >
+            GO
+          </button>
+        </nav>
+      </section>
+
+      <!-- UI PATTERN 03 -->
+      <section style="display: block; margin-bottom: 100px">
+        <header style="display: block; margin-bottom: 24px">
+          <span style="display: inline-block; margin-right: 20px"
+            >UI 패턴 03</span
+          >
+          <h1 style="display: inline-block; margin: 0">BLOG ARTICLE LIST</h1>
+        </header>
+
+        <article
+          style="
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 16px;
+            box-sizing: border-box;
+          "
+        >
+          <p style="display: inline-block; margin: 0 0 10px; padding: 2px 5px">
+            Category
+          </p>
+
+          <div style="display: block">
+            <figure
+              style="
+                display: inline-block;
+                width: 176px;
+                height: 112px;
+                margin: 0 16px 0 0;
+                vertical-align: top;
+              "
+            >
+              <img
+                style="display: block; width: 180px; height: 120px"
+                src="https://www.dropbox.com/scl/fi/n6j06cze8f5lom88zejrx/2026-10-02-035601.png?rlkey=yqq7oskzyhy0ppp48coaj0nl2&st=3e54qj7w&dl=1"
+                alt="Figma 반응형 레이아웃 썸네일"
+              />
+            </figure>
+
+            <div
+              style="
+                display: inline-block;
+                width: calc(100% - 200px);
+                vertical-align: top;
+              "
+            >
+              <h2 style="margin: 0 0 16px">Figma: 반응형 레이아웃의 기초</h2>
+
+              <p style="margin: 0 0 8px">
+                시각적 디자인 과정(CSS)을 배제하고, Figma의 Auto Layout 구조와
+                HTML 기본 태그의 계층 구조를 동일하게 구현하는 반복 훈련입니다.
+              </p>
+
+              <small>♡ 4&nbsp;&nbsp;2026.05.05</small>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- UI PATTERN 04 -->
+      <section style="display: block; margin-bottom: 100px">
+        <header style="display: block; margin-bottom: 24px">
+          <span style="display: inline-block; margin-right: 20px"
+            >UI 패턴 04</span
+          >
+          <h1 style="display: inline-block; margin: 0">YOUTUBE THUMBNAIL</h1>
+        </header>
+
+        <article
+          style="
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 16px;
+            box-sizing: border-box;
+          "
+        >
+          <figure
+            style="display: block; width: 100%; height: 204px; margin: 0 0 11px"
+          >
+            <img
+              style="display: block; width: 100%; height: 204px"
+              src="https://www.dropbox.com/scl/fi/n6j06cze8f5lom88zejrx/2026-10-02-035601.png?rlkey=yqq7oskzyhy0ppp48coaj0nl2&st=3e54qj7w&dl=1"
+              alt="Figma 반응형 레이아웃 영상 썸네일"
+            />
+          </figure>
+
+          <div style="display: block">
+            <img
+              style="
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+                vertical-align: top;
+              "
+              src="https://avatars.githubusercontent.com/u/234168507?v=4&size=64"
+              alt="채널 프로필 이미지"
+            />
+
+            <div
+              style="
+                display: inline-block;
+                width: calc(100% - 55px);
+                vertical-align: top;
+              "
+            >
+              <h3 style="margin: 0 0 4px">Figma: 반응형 레이아웃의 기초</h3>
+              <p style="margin: 0">
+                TvN&nbsp;&nbsp;12K views&nbsp;&nbsp;1년 전
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- UI PATTERN 05 -->
+      <section style="display: block; margin-bottom: 100px">
+        <header style="display: block; margin-bottom: 24px">
+          <span style="display: inline-block; margin-right: 20px"
+            >UI 패턴 05</span
+          >
+          <h1 style="display: inline-block; margin: 0">PRICING CARD</h1>
+        </header>
+
+        <article
+          style="
+            display: block;
+            width: 100%;
+            min-width: 400px;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 24px;
+            box-sizing: border-box;
+          "
+        >
+          <header style="display: block; margin-bottom: 24px; padding-top: 6px">
+            <p style="margin: 0 0 4px; font-weight: bold">PRO PLAN</p>
+            <h2 style="margin: 0; padding-top: 2px">
+              $29
+              <span style="font-weight: normal; font-size: 16px">/ month</span>
+            </h2>
+          </header>
+
+          <ul
+            style="
+              margin: 0 0 24px;
+              padding-top: 15px;
+              padding-bottom: 16px;
+              padding-left: 20px;
+            "
+          >
+            <li style="margin-bottom: 8px">[✓] No AD</li>
+            <li style="margin-bottom: 8px">[✓] Get payback</li>
+            <li>[✓] New Ai access</li>
+          </ul>
+
+          <button
+            style="
+              display: block;
+              width: 100%;
+              padding: 10px 16px;
+              color: white;
+              background-color: black;
+              border: none;
+            "
+          >
+            SUBSCRIBE
+          </button>
+        </article>
+      </section>
+
+      <!-- UI PATTERN 06 -->
+      <section style="display: block; margin-bottom: 100px">
+        <header style="display: block; margin-bottom: 24px">
+          <span style="display: inline-block; margin-right: 20px"
+            >UI 패턴 06</span
+          >
+          <h1 style="display: inline-block; margin: 0">SIGN IN</h1>
+        </header>
+
+        <form
+          style="
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 32px;
+            box-sizing: border-box;
+          "
+        >
+          <header style="display: block; max-width: 400px; margin: 0 auto 24px">
+            <h2 style="margin: 0; text-align: center">SIGN IN</h2>
+          </header>
+
+          <label style="display: block; max-width: 400px; margin: 0 auto 16px">
+            Email
+            <input
+              style="
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+                margin-top: 4px;
+              "
+              type="email"
+              name="email"
+            />
+          </label>
+
+          <label style="display: block; max-width: 400px; margin: 0 auto 16px">
+            Password
+            <input
+              style="
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+                margin-top: 4px;
+              "
+              type="password"
+              name="password"
+            />
+          </label>
+
+          <button
+            style="
+              display: block;
+              width: 100%;
+              max-width: 400px;
+              margin: 0 auto 16px;
+              padding: 8px 16px;
+              color: white;
+              background-color: black;
+              border: none;
+            "
+            type="submit"
+          >
+            SIGN IN
+          </button>
+
+          <p style="max-width: 400px; margin: 0 auto; text-align: center">
+            <a href="#">Forgot password?</a>
+          </p>
+        </form>
+      </section>
+
+      <!-- UI PATTERN 07 -->
+      <section style="display: block; margin-bottom: 100px">
+        <header style="display: block; margin-bottom: 24px">
+          <span style="display: inline-block; margin-right: 20px"
+            >UI 패턴 07</span
+          >
+          <h1 style="display: inline-block; margin: 0">COMMENT THREAD</h1>
+        </header>
+
+        <article
+          style="
+            display: block;
+            width: 100%;
+            max-width: 768px;
+            margin: 0 auto;
+            padding: 24px;
+            box-sizing: border-box;
+          "
+        >
+          <header style="display: block; margin-bottom: 24px">
+            <img
+              style="
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                margin-right: 12px;
+                vertical-align: top;
+              "
+              src="https://avatars.githubusercontent.com/u/234168507?v=4&size=64"
+              alt="댓글 작성자 프로필"
+            />
+
+            <div
+              style="
+                display: inline-block;
+                width: calc(100% - 60px);
+                vertical-align: top;
+              "
+            >
+              <h2 style="margin: 0 0 4px">
+                홍길동<span style="font-weight: normal; font-size: 14px">
+                  2 hours ago</span
+                >
+              </h2>
+              <p style="margin: 0 0 8px">오토 레이아웃 연습중....</p>
+              <button
+                style="
+                  border-top: none;
+                  border-right: none;
+                  border-bottom: 1px solid black;
+                  border-left: none;
+                "
+              >
+                coment
+              </button>
+            </div>
+          </header>
+
+          <article style="display: block; margin-left: 52px; padding-top: 16px">
+            <header style="display: block">
+              <img
+                style="
+                  display: inline-block;
+                  width: 32px;
+                  height: 32px;
+                  margin-right: 8px;
+                  vertical-align: top;
+                "
+                src="https://avatars.githubusercontent.com/u/234168507?v=4&size=64"
+                alt="답글 작성자 프로필"
+              />
+
+              <div style="display: inline-block; vertical-align: top">
+                <h3 style="margin: 0 0 4px">
+                  김철수<span style="font-weight: normal; font-size: 14px">
+                    1 hours ago</span
+                  >
+                </h3>
+                <p style="margin: 0">오오 너 짱</p>
+              </div>
+            </header>
+          </article>
+        </article>
+      </section>
+
+      <!-- UI PATTERN 08 -->
+      <section style="display: block; margin-bottom: 100px">
+        <header style="display: block; margin-bottom: 24px">
+          <span style="display: inline-block; margin-right: 20px"
+            >UI 패턴 08</span
+          >
+          <h1 style="display: inline-block; margin: 0">PAGINATION</h1>
+        </header>
+
+        <nav
+          style="
+            display: block;
+            padding: 16px 30px;
+            box-sizing: border-box;
+            text-align: center;
+          "
+        >
+          <button
+            style="
+              display: inline-block;
+              padding: 6px 12px;
+              margin-right: 20px;
+              border: none;
+            "
+          >
+            ← PREVIOUS
+          </button>
+
+          <ol
+            style="
+              display: inline-block;
+              margin: 0;
+              padding: 4px;
+              vertical-align: middle;
+            "
+          >
+            <li
+              style="
+                display: inline-block;
+                width: 32px;
+                height: 32px;
+                text-align: center;
+                background-color: black;
+              "
+            >
+              <a style="text-decoration: none; color: white" href="#">1</a>
+            </li>
+            <li
+              style="
+                display: inline-block;
+                width: 32px;
+                height: 32px;
+                text-align: center;
+              "
+            >
+              <a style="text-decoration: none" href="#">2</a>
+            </li>
+            <li
+              style="
+                display: inline-block;
+                width: 32px;
+                height: 32px;
+                text-align: center;
+              "
+            >
+              <a style="text-decoration: none" href="#">3</a>
+            </li>
+            <li
+              style="
+                display: inline-block;
+                width: 32px;
+                height: 32px;
+                text-align: center;
+              "
+            >
+              <a style="text-decoration: none" href="#">4</a>
+            </li>
+            <li
+              style="
+                display: inline-block;
+                width: 32px;
+                height: 32px;
+                text-align: center;
+              "
+            >
+              <span>...</span>
+            </li>
+            <li
+              style="
+                display: inline-block;
+                width: 32px;
+                height: 32px;
+                text-align: center;
+              "
+            >
+              <a style="text-decoration: none" href="#">10</a>
+            </li>
+          </ol>
+
+          <button
+            style="
+              display: inline-block;
+              padding: 6px 12px;
+              margin-left: 20px;
+              border: none;
+            "
+          >
+            NEXT →
+          </button>
+        </nav>
+      </section>
+
+      <!-- UI PATTERN 09 -->
+      <section style="display: block; margin-bottom: 100px">
+        <header style="display: block; margin-bottom: 24px">
+          <span style="display: inline-block; margin-right: 20px"
+            >UI 패턴 09</span
+          >
+          <h1 style="display: inline-block; margin: 0">FOOTER</h1>
+        </header>
+
+        <footer
+          style="
+            display: block;
+            padding: 32px 32px 10px;
+            box-sizing: border-box;
+          "
+        >
+          <header style="display: block; margin-bottom: 24px">
+            <strong style="display: inline-block; margin-right: 8px"
+              >[C]</strong
+            >
+            <h2 style="display: inline-block; margin: 0">CORP WIREFRAME</h2>
+          </header>
+
+          <p
+            style="
+              display: inline-block;
+              width: 180px;
+              margin: 0 60px 0 0;
+              vertical-align: top;
+            "
+          >
+            Beginner <br />HTML/CSS <br />Auto Layout <br />Exercise Board<br />
+            Box models <br />Made <br />Clear.
+          </p>
+
+          <nav style="display: inline-block; width: 150px; vertical-align: top">
+            <h3 style="margin: 0 0 8px">NAVIGATION</h3>
+            <ul style="margin: 0; padding: 0; list-style: none">
+              <li><a style="text-decoration: none" href="#">About Us</a></li>
+              <li><a style="text-decoration: none" href="#">Work</a></li>
+              <li><a style="text-decoration: none" href="#">Contact</a></li>
+            </ul>
+          </nav>
+
+          <section
+            style="display: inline-block; width: 180px; vertical-align: top"
+          >
+            <h3 style="margin: 0 0 8px">COMPANY INFORMATION</h3>
+            <p style="margin: 0 0 4px"><strong>Web Design</strong></p>
+            <address>
+              천안시 동남구...<br />
+              <a href="mailto:yoon@sssmail.com">yoon@sssmail.com</a>
+            </address>
+          </section>
+
+          <small style="display: block; margin-top: 24px">
+            © 2026 Web Design. All rights reserved.
+          </small>
+        </footer>
+      </section>
+
+      <!-- UI PATTERN 10 -->
+      <section style="display: block; margin-bottom: 50px">
+        <header style="display: block; margin-bottom: 24px">
+          <span style="display: inline-block; margin-right: 20px"
+            >UI 패턴 10</span
+          >
+          <h1 style="display: inline-block; margin: 0">TOAST</h1>
+        </header>
+
+        <aside
+          style="
+            display: block;
+            width: 100%;
+            max-width: 460px;
+            margin: 0 auto;
+            padding: 16px;
+            box-sizing: border-box;
+          "
+        >
+          <strong
+            style="
+              display: inline-block;
+              width: 24px;
+              height: 24px;
+              margin-right: 12px;
+              text-align: center;
+              vertical-align: top;
+            "
+          >
+            [i]
+          </strong>
+
+          <article
+            style="
+              display: inline-block;
+              width: calc(100% - 80px);
+              vertical-align: top;
+            "
+          >
+            <h2 style="margin: 0 0 2px">업뎃이 완료되었습니다.</h2>
+            <p style="margin: 0">이제부터 OO 1.52 버전 사용이 가능합니다.</p>
+          </article>
+
+          <button
+            style="
+              display: inline-block;
+              padding: 10px;
+              vertical-align: top;
+              border: none;
+            "
+            aria-label="닫기"
+          >
+            ✕
+          </button>
+        </aside>
+      </section>
+    </main>
+  </body>
+</html>
