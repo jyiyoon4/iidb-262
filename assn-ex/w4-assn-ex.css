@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: oklch(1 0 0);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  > * + * {
+    margin-top: 56px;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'GRAD' 0;
+}
+
+.btn {
+  width: fit-content;
+  background: oklch(0.4 0.2 270);
+  color: oklch(0.9 0.2 270);
+  font-size: 14px;
+  font-weight: 500;
+  text-box: trim-both cap alphabetic;
+  padding-inline: 16px;
+  padding-block: 12px;
+  border-radius: 999px;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+  &.alt {
+    background: oklch(0.9 0.2 270);
+    color: oklch(0.2 0.2 270);
+  }
+}
+
+#profile {
+  background: oklch(0.95 0 0);
+  color: oklch(0.4 0 0);
+  max-width: 600px;
+  padding-inline: 16px;
+  padding-block: 16px;
+  border-radius: 16px;
+  margin-inline: auto;
+  a {
+    color: oklch(0.6 0.2 270);
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .material-symbols-outlined {
+    font-variation-settings:
+      'wght' 500,
+      'opsz' 14;
+  }
+  .picture {
+    background: oklch(0.4 0 0);
+    aspect-ratio: 1 / 1;
+    width: 100px;
+    border-radius: 999px;
+  }
+  .name {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .id {
+    margin-top: 4px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .wrap {
+    margin-top: 8px;
+    display: flex;
+    gap: 16px;
+    justify-content: start;
+  }
+  .link,
+  .joined,
+  .following,
+  .follower {
+    display: flex;
+    gap: 6px;
+  }
+  .label {
+    user-select: none;
+    display: flex;
+    gap: 2px;
+    justify-content: start;
+    align-items: center;
+    font-weight: 500;
+    color: oklch(0.3 0 0);
+  }
+  .section {
+    /* border: 1px dotted oklch(0.8 0 0); */
+  }
+  .section-1 {
+    display: flex;
+    gap: 1rem;
+    justify-content: start;
+    align-items: end;
+  }
+  .section-2 {
+    margin-top: 16px;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .section-3 {
+    margin-top: 16px;
+    display: flex;
+    gap: 16px;
+    justify-content: start;
+  }
+  .section-5 {
+    margin-top: 24px;
+    display: flex;
+    gap: 16px;
+    justify-content: stretch;
+    > * {
+      flex: 1 0 auto;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+body {
+  background-color: oklch(0.99 0 0);
+  margin: 0;
+}
+
+.btn {
+  margin-inline: auto;
+  background-color: oklch(0.7 0.2 270);
+  color: oklch(0.3 0.1 270);
+  font-size: 14px;
+  width: fit-content;
+  padding-block: 8px;
+  padding-inline: 16px;
+  border-radius: 999px;
+  border: 1px solid oklch(0.5 0.2 270);
+  text-box: trim-both cap alphabetic; /* 이건 한 줄 짜리에서만!! 쓰자 */
+}
+
+.wrap {
+  background-color: oklch(0.9 0.5 270);
+  height: 50vh;
+  align-content: center;
+}
+
+.wrap.flex {
+  background-color: oklch(0.9 0.05 30);
+  height: unset;
+  align-content: unset;
+  display: flex; /* 부모한ㄴ테 넣는 거임 */
+  justify-content: center; /*가로*/
+  align-items: end; /*세로*/
+}
+
+.flex .btn {
+  margin-inline: unset;
+}
