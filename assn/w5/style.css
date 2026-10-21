@@ -1,0 +1,612 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Noto Sans KR', Arial, sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.wrapper {
+  width: min(100% - 2rem, 72rem);
+  margin-inline: auto;
+
+  @media (max-width: 30rem) {
+    width: min(100% - 1rem, 72rem);
+  }
+}
+
+.page-header {
+  padding-block: 1.5rem;
+  border-bottom: 1px solid #aaa;
+
+  h1,
+  p {
+    margin-block: 0.25rem;
+  }
+}
+
+.practice-section {
+  padding-block: 1.5rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #555;
+}
+
+.exercise {
+  margin-block: 1.5rem 2rem;
+
+  > h3 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+
+    span {
+      color: #666;
+      font-size: 0.85rem;
+    }
+  }
+}
+
+.demo-box {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid #aaa;
+  background: #fafafa;
+
+  @media (max-width: 30rem) {
+    padding: 0.75rem;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* ====================================================== */
+.gnb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  &__logo {
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #aaa;
+      background: #eee;
+      white-space: nowrap;
+    }
+  }
+}
+
+/* ====================================================== */
+.search-bar {
+  display: flex;
+  gap: 0.5rem;
+
+  input {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #aaa;
+    background: #fff;
+  }
+
+  button {
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    padding: 0.4rem 1rem;
+    border: 1px solid #aaa;
+    background: #eee;
+    cursor: pointer;
+    font-size: 1.35rem;
+  }
+}
+
+/* ====================================================== */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &__thumbnail {
+    display: flex;
+    flex: 0 0 auto;
+    width: 4rem;
+    aspect-ratio: 1;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    background: #eee;
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+
+    h4,
+    p {
+      margin-bottom: 0.35rem;
+    }
+  }
+
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+}
+
+/* ====================================================== */
+.card-list {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+
+  @media (max-width: 48rem) {
+    flex-wrap: wrap;
+  }
+}
+
+.info-card {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid #aaa;
+  background: #fff;
+
+  h4 {
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  &__action {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #aaa;
+    background: #eee;
+  }
+
+  @media (max-width: 48rem) {
+    flex: 1 1 calc(50% - 0.5rem);
+  }
+
+  @media (max-width: 30rem) {
+    flex-basis: 100%;
+  }
+}
+
+/* FLEX 05 — 칩 줄바꿈 */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.5rem;
+
+  span {
+    padding: 0.35rem 0.75rem;
+    border: 1px solid #aaa;
+    background: #eee;
+  }
+}
+
+/* FLEX 06 — 탭 1:1:1 */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+
+  a {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.65rem;
+    border: 1px solid #aaa;
+    background: #eee;
+    text-align: center;
+  }
+}
+
+/* ====================================================== */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5rem;
+
+  a {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #aaa;
+    background: #eee;
+
+    span:first-child {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+/* ====================================================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 1rem;
+  list-style: none;
+}
+
+.product-card {
+  min-width: 0;
+  padding: 0.75rem;
+  border: 1px solid #aaa;
+  background: #fff;
+
+  &__image {
+    display: grid;
+    aspect-ratio: 4 / 3;
+    place-items: center;
+    border: 1px solid #bbb;
+    background: #eee;
+  }
+
+  h4 {
+    margin: 0.75rem 0 0.25rem;
+  }
+}
+
+/* ====================================================== */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(6rem, auto);
+  gap: 0.75rem;
+
+  @media (max-width: 30rem) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.widget {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid #aaa;
+  background: #fff;
+
+  h4,
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  &--large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+/* ====================================================== */
+.checkout-form {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+
+  @media (max-width: 30rem) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+
+  input {
+    width: 100%;
+    min-width: 0;
+    padding: 0.6rem;
+    border: 1px solid #aaa;
+    background: #fff;
+  }
+
+  &--half {
+    grid-column: span 3;
+  }
+
+  &--third {
+    grid-column: span 2;
+  }
+
+  &--full {
+    grid-column: 1 / -1;
+  }
+
+  @media (max-width: 30rem) {
+    &--half,
+    &--third {
+      grid-column: span 1;
+    }
+
+    &--third:last-child {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+/* ====================================================== */
+.calendar {
+  h4 {
+    margin-bottom: 0.75rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 0.25rem;
+
+    > span {
+      display: grid;
+      min-width: 0;
+      min-height: 2.5rem;
+      place-items: center;
+      padding: 0.25rem;
+      border: 1px solid #ccc;
+      background: #fff;
+    }
+
+    .calendar__weekday {
+      background: #eee;
+      font-weight: 700;
+    }
+
+    .calendar__empty {
+      border-color: transparent;
+      background: transparent;
+    }
+  }
+}
+
+/* ====================================================== */
+.pricing-table {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.25rem;
+}
+
+.pricing-row {
+  display: contents;
+}
+
+.pricing-cell {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 0.75rem;
+  border: 1px solid #aaa;
+  background: #fff;
+  overflow-wrap: anywhere;
+
+  &--heading {
+    justify-content: center;
+    background: #eee;
+    font-weight: 700;
+  }
+
+  @media (max-width: 30rem) {
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* ====================================================== */
+.mega-footer {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+
+  > * {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    min-width: 0;
+  }
+
+  @media (max-width: 48rem) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: 30rem) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ====================================================== */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  padding: 0;
+  overflow: hidden;
+
+  &__image,
+  &__content {
+    grid-area: 1 / 1;
+  }
+
+  &__image {
+    display: grid;
+    min-height: 18rem;
+    place-items: center;
+    border: 1px solid #aaa;
+    background: #e8e8e8;
+  }
+
+  &__content {
+    z-index: 1;
+    align-self: end;
+    justify-self: start;
+    width: min(100% - 2rem, 28rem);
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #aaa;
+    background: #fff;
+
+    h4,
+    p {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      display: inline-flex;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #aaa;
+      background: #eee;
+    }
+  }
+}
+
+/* ====================================================== */
+.app-shell {
+  display: grid;
+  grid-template-columns: minmax(12rem, 1fr) minmax(0, 3fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  min-height: 100vh;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-column: 1 / -1;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #aaa;
+    background: #eee;
+  }
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: 1px solid #aaa;
+    background: #fff;
+
+    h4 {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      background: #eee;
+    }
+  }
+
+  &__main {
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid #aaa;
+    background: #fff;
+
+    > h4 {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+    gap: 0.75rem;
+
+    article {
+      min-width: 0;
+      padding: 1rem;
+      border: 1px solid #aaa;
+      background: #fafafa;
+    }
+
+    h5,
+    p {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  @media (max-width: 48rem) {
+    grid-template-columns: minmax(9rem, 1fr) minmax(0, 2fr);
+  }
+
+  @media (max-width: 30rem) {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(12rem, auto);
+  }
+}
+
+.page-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 1.5rem;
+  border-top: 1px solid #aaa;
+
+  p {
+    margin-right: auto;
+
+    @media (max-width: 30rem) {
+      flex-basis: 100%;
+    }
+  }
+}

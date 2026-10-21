@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox & Grid 레이아웃 실습</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body id="top">
+    <div class="wrapper">
+      <header class="page-header">
+        <h1>Flexbox & Grid 레이아웃 실습</h1>
+        <p>Flex 7개 · Grid 8개</p>
+      </header>
+
+      <!-- ================= flex ================= -->
+      <section class="practice-section" id="flexbox">
+        <header class="section-heading">
+          <span>PART 1</span>
+          <h2>Flexbox 실습</h2>
+        </header>
+
+        <section class="exercise" id="flex-01">
+          <h3><span>01</span> GNB (글로벌 네비게이션)</h3>
+          <nav class="gnb demo-box" aria-label="주 메뉴">
+            <a class="gnb__logo" href="#flexbox">코드노트</a>
+            <div class="gnb__actions">
+              <a href="#flex-03">로그인</a>
+              <a href="#grid-10">회원가입</a>
+            </div>
+          </nav>
+        </section>
+
+        <section class="exercise" id="flex-02">
+          <h3><span>02</span> 검색바 (Search Bar)</h3>
+          <form class="search-bar demo-box" role="search" action="#grid-08">
+            <label class="visually-hidden" for="site-search">검색어</label>
+            <input
+              id="site-search"
+              type="search"
+              placeholder="검색어를 입력하세요"
+            />
+            <button type="submit" aria-label="검색">⌕</button>
+          </form>
+        </section>
+
+        <section class="exercise" id="flex-03">
+          <h3><span>03</span> 미디어 / 프로필 객체</h3>
+          <article class="profile demo-box">
+            <div class="profile__thumbnail" aria-hidden="true">홍</div>
+            <div class="profile__content">
+              <h4>홍길동</h4>
+              <p>@johndoe</p>
+              <p>디자인과 코드를 연결하며 웹 레이아웃을 연습하고 있습니다.</p>
+              <div class="profile__stats">
+                <span>팔로잉 <strong>40</strong></span>
+                <span>팔로워 <strong>30</strong></span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="exercise" id="flex-04">
+          <h3><span>04</span> 카드 내 액션 버튼 하단 고정</h3>
+          <div class="card-list demo-box">
+            <article class="info-card">
+              <h4>Flexbox와 Grid</h4>
+              <p>
+                한 방향 정렬은 Flexbox로, 행과 열이 함께 필요한 배치는 Grid로
+                나누어 생각하면 코드가 단순해집니다.
+              </p>
+              <a class="info-card__action" href="#grid-08">자세히 보기</a>
+            </article>
+            <article class="info-card">
+              <h4>웹 접근성</h4>
+              <p>
+                label 연결과 키보드 포커스 표시를 확인하며 접근성을 고려한 폼을
+                만들어 봅니다.
+              </p>
+              <a class="info-card__action" href="#grid-10">자세히 보기</a>
+            </article>
+            <article class="info-card">
+              <h4>디자인 토큰</h4>
+              <p>
+                CSS 변수로 간격을 관리하면 컴포넌트 전체의 일관성을 유지하기
+                쉽습니다.
+              </p>
+              <a class="info-card__action" href="#grid-13">자세히 보기</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="exercise" id="flex-05">
+          <h3><span>05</span> 해시태그 / 필터 칩</h3>
+          <div class="chips demo-box" aria-label="주제 태그">
+            <span>CSS</span>
+            <span>Flexbox</span>
+            <span>Grid</span>
+            <span>접근성</span>
+            <span>반응형 레이아웃</span>
+            <span>디자인 토큰</span>
+            <span>HTML</span>
+            <span>웹 프로그래밍</span>
+            <span>UI 컴포넌트</span>
+          </div>
+        </section>
+
+        <section class="exercise" id="flex-06">
+          <h3><span>06</span> 동등 비율 탭 메뉴</h3>
+          <nav class="tabs demo-box" aria-label="콘텐츠 탭">
+            <a href="#grid-08">블로그</a>
+            <a href="#grid-09">대시보드</a>
+            <a href="#grid-12">요금제</a>
+          </nav>
+        </section>
+
+        <section class="exercise" id="flex-07">
+          <h3><span>07</span> 모바일 하단 툴바</h3>
+          <nav class="toolbar demo-box" aria-label="모바일 메뉴">
+            <a href="#top"><span aria-hidden="true">⌂</span><span>홈</span></a>
+            <a href="#flex-02"
+              ><span aria-hidden="true">⌕</span><span>검색</span></a
+            >
+            <a href="#grid-08"
+              ><span aria-hidden="true">▤</span><span>블로그</span></a
+            >
+            <a href="#flex-03"
+              ><span aria-hidden="true">○</span><span>마이</span></a
+            >
+          </nav>
+        </section>
+      </section>
+
+      <!-- ================= grid ================= -->
+      <section class="practice-section" id="grid">
+        <header class="section-heading">
+          <span>PART 2</span>
+          <h2>Grid 실습</h2>
+        </header>
+
+        <section class="exercise" id="grid-08">
+          <h3><span>08</span> 커머스 상품 리스트 (Auto-fit)</h3>
+          <ul class="product-grid demo-box">
+            <li class="product-card">
+              <div class="product-card__image">이미지</div>
+              <h4>CSS Grid 가이드</h4>
+              <p>₩12,000</p>
+            </li>
+            <li class="product-card">
+              <div class="product-card__image">이미지</div>
+              <h4>웹 접근성 노트</h4>
+              <p>₩8,000</p>
+            </li>
+            <li class="product-card">
+              <div class="product-card__image">이미지</div>
+              <h4>디자인 토큰 북</h4>
+              <p>₩15,000</p>
+            </li>
+            <li class="product-card">
+              <div class="product-card__image">이미지</div>
+              <h4>HTML 기초 자료</h4>
+              <p>₩10,000</p>
+            </li>
+            <li class="product-card">
+              <div class="product-card__image">이미지</div>
+              <h4>Flexbox 연습 카드</h4>
+              <p>₩7,000</p>
+            </li>
+            <li class="product-card">
+              <div class="product-card__image">이미지</div>
+              <h4>반응형 레이아웃</h4>
+              <p>₩11,000</p>
+            </li>
+          </ul>
+        </section>
+
+        <section class="exercise" id="grid-09">
+          <h3><span>09</span> 대시보드 / 벤토박스</h3>
+          <div class="dashboard demo-box">
+            <article class="widget widget--large">
+              <h4>학습 현황</h4>
+              <p>이번 주 학습한 레이아웃과 진행 상황</p>
+              <strong>12개 완료</strong>
+            </article>
+            <article class="widget">
+              <h4>프로젝트</h4>
+              <p>3개</p>
+            </article>
+            <article class="widget">
+              <h4>저장한 자료</h4>
+              <p>18개</p>
+            </article>
+            <article class="widget">
+              <h4>최근 활동</h4>
+              <p>Flexbox 실습 완료</p>
+            </article>
+            <article class="widget">
+              <h4>다음 학습</h4>
+              <p>Grid 실습</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="exercise" id="grid-10">
+          <h3><span>10</span> 복잡한 결제 폼</h3>
+          <form class="checkout-form demo-box" action="#grid-10">
+            <div class="field field--half">
+              <label for="surname">성</label>
+              <input id="surname" name="surname" placeholder="홍" />
+            </div>
+            <div class="field field--half">
+              <label for="given-name">이름</label>
+              <input id="given-name" name="given-name" placeholder="길동" />
+            </div>
+            <div class="field field--full">
+              <label for="address">주소</label>
+              <input
+                id="address"
+                name="address"
+                placeholder="주소를 입력하세요"
+              />
+            </div>
+            <div class="field field--third">
+              <label for="country">국가</label>
+              <input id="country" name="country" placeholder="대한민국" />
+            </div>
+            <div class="field field--third">
+              <label for="city">도시</label>
+              <input id="city" name="city" placeholder="서울" />
+            </div>
+            <div class="field field--third">
+              <label for="postcode">우편번호</label>
+              <input id="postcode" name="postcode" placeholder="00000" />
+            </div>
+          </form>
+        </section>
+
+        <section class="exercise" id="grid-11">
+          <h3><span>11</span> 월간 달력 (Calendar)</h3>
+          <div class="calendar demo-box">
+            <h4>2026년 10월</h4>
+            <div class="calendar__grid">
+              <span class="calendar__weekday">일</span>
+              <span class="calendar__weekday">월</span>
+              <span class="calendar__weekday">화</span>
+              <span class="calendar__weekday">수</span>
+              <span class="calendar__weekday">목</span>
+              <span class="calendar__weekday">금</span>
+              <span class="calendar__weekday">토</span>
+              <span class="calendar__day--first">1</span><span>2</span
+              ><span>3</span> <span>4</span><span>5</span><span>6</span
+              ><span>7</span><span>8</span><span>9</span><span>10</span>
+              <span>11</span><span>12</span><span>13</span><span>14</span
+              ><span>15</span><span>16</span><span>17</span> <span>18</span
+              ><span>19</span><span>20</span><span>21</span><span>22</span
+              ><span>23</span><span>24</span> <span>25</span><span>26</span
+              ><span>27</span><span>28</span><span>29</span><span>30</span
+              ><span>31</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="exercise" id="grid-12">
+          <h3><span>12</span> 스펙 비교 표 (Pricing Table)</h3>
+          <div
+            class="pricing-table demo-box"
+            role="table"
+            aria-label="요금제 비교"
+          >
+            <div class="pricing-row" role="row">
+              <div
+                class="pricing-cell pricing-cell--heading"
+                role="columnheader"
+              >
+                항목
+              </div>
+              <div
+                class="pricing-cell pricing-cell--heading"
+                role="columnheader"
+              >
+                무료
+              </div>
+              <div
+                class="pricing-cell pricing-cell--heading"
+                role="columnheader"
+              >
+                프로
+              </div>
+              <div
+                class="pricing-cell pricing-cell--heading"
+                role="columnheader"
+              >
+                팀
+              </div>
+            </div>
+            <div class="pricing-row" role="row">
+              <div class="pricing-cell" role="rowheader">가격</div>
+              <div class="pricing-cell" role="cell">₩0</div>
+              <div class="pricing-cell" role="cell">₩9,900</div>
+              <div class="pricing-cell" role="cell">₩29,000</div>
+            </div>
+            <div class="pricing-row" role="row">
+              <div class="pricing-cell" role="rowheader">프로젝트</div>
+              <div class="pricing-cell" role="cell">3개</div>
+              <div class="pricing-cell" role="cell">무제한</div>
+              <div class="pricing-cell" role="cell">무제한</div>
+            </div>
+            <div class="pricing-row" role="row">
+              <div class="pricing-cell" role="rowheader">지원</div>
+              <div class="pricing-cell" role="cell">기본</div>
+              <div class="pricing-cell" role="cell">우선 지원</div>
+              <div class="pricing-cell" role="cell">전담 지원</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="exercise" id="grid-13">
+          <h3><span>13</span> 반응형 메가 푸터</h3>
+          <div class="mega-footer demo-box">
+            <div>
+              <h4>코드노트</h4>
+              <p>디자인과 코드를 잇는 학습 기록 공간입니다.</p>
+            </div>
+            <nav aria-label="서비스 링크">
+              <h4>서비스</h4>
+              <a href="#grid-08">블로그</a>
+              <a href="#grid-09">대시보드</a>
+              <a href="#grid-12">요금제</a>
+            </nav>
+            <nav aria-label="프로젝트 링크">
+              <h4>프로젝트</h4>
+              <a href="#flexbox">소개</a>
+              <a href="#grid-10">로그인</a>
+              <a href="#grid-09">커뮤니티</a>
+            </nav>
+            <nav aria-label="소셜 링크">
+              <h4>소셜</h4>
+              <a href="#grid-13">GitHub</a>
+              <a href="#grid-13">YouTube</a>
+            </nav>
+          </div>
+        </section>
+
+        <section class="exercise" id="grid-14">
+          <h3><span>14</span> 이미지 위 텍스트 겹침 (Hero Banner)</h3>
+          <div class="hero demo-box">
+            <img
+              class="hero__image"
+              src="../../assets/pic/prs.png"
+              alt="히어로 배너 이미지"
+            />
+            <div class="hero__content">
+              <p>CSS LAYOUT</p>
+              <h4>Flexbox와 Grid</h4>
+              <p>콘텐츠의 구조에 맞는 레이아웃을 선택해 보세요.</p>
+              <a href="#flexbox">학습 시작하기</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="exercise" id="grid-15">
+          <h3><span>15</span> 웹앱 셸 (App Shell)</h3>
+          <div class="app-shell demo-box">
+            <header class="app-shell__header">
+              <strong>코드노트</strong><span>학습 대시보드</span>
+            </header>
+            <aside class="app-shell__sidebar">
+              <h4>메뉴</h4>
+              <a href="#grid-08">블로그</a>
+              <a href="#grid-09">대시보드</a>
+              <a href="#grid-12">요금제</a>
+            </aside>
+            <div class="app-shell__main">
+              <h4>최근 학습</h4>
+              <div class="app-shell__cards">
+                <article>
+                  <h5>Flexbox</h5>
+                  <p>한 방향 정렬과 공간 분배</p>
+                </article>
+                <article>
+                  <h5>Grid</h5>
+                  <p>행과 열을 함께 제어하는 배치</p>
+                </article>
+                <article>
+                  <h5>반응형 레이아웃</h5>
+                  <p>화면 너비에 따라 달라지는 구조</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <footer class="page-footer">
+        <p>Flexbox & Grid 실습</p>
+        <a href="#flexbox">Flexbox</a>
+        <a href="#grid">Grid</a>
+        <a href="#top">맨 위로</a>
+      </footer>
+    </div>
+  </body>
+</html>
