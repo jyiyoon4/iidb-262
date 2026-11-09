@@ -1,0 +1,531 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===========================  1. DESIGN TOKENS  =========================== */
+:root {
+  --color-paper: oklch(96% 0.01 95);
+  --color-ink: oklch(16% 0 0);
+
+  --space-pad: clamp(16px, 3.2vw, 56px);
+  --space-gap: clamp(8px, 1.4vw, 24px);
+
+  --grid-columns: 12;
+
+  --font-size-meta: clamp(0.72rem, 0.62rem + 0.35vw, 0.95rem);
+  --font-size-body: clamp(0.85rem, 0.72rem + 0.45vw, 1.15rem);
+  --font-size-opus: clamp(1.6rem, 1rem + 2.6vw, 3.6rem);
+  --font-size-subtitle: clamp(1.15rem, 0.75rem + 1.5vw, 2.6rem);
+  --font-size-title: clamp(5rem, min(1rem + 7vw + 6vh, 12vw), 15rem);
+}
+
+/* ===========================  2. BODY, 폰트 설정 =========================== */
+
+h1 {
+  font-weight: inherit;
+}
+
+body {
+  font-family: 'Inter Tight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: var(--font-size-body);
+  line-height: 1.35;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===========================  3. GRID  =========================== */
+
+.poster {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), minmax(0, 1fr));
+  grid-template-rows: auto minmax(42vh, 1fr) auto auto;
+  column-gap: var(--space-gap);
+  row-gap: calc(var(--space-gap) * 2);
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: var(--space-pad);
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* ===========================  4. 호  =========================== */
+
+.arcs {
+  /* 상수 */
+  --arc-unit: 0.1cqmax;
+  --arc-module: 11.25deg;
+
+  /* 모드 계수 */
+  --arc-cx: 64%;
+  --arc-cy: 60%;
+  --start-base: 20;
+  --start-step: 2;
+  --start-zigzag: -3;
+  --start-break: 5;
+  --length-base: 5;
+  --length-step: 1;
+  --length-break: 6;
+
+  --pair-total: 16;
+  --outer-length: 22;
+
+  grid-column: 4 / -1;
+  grid-row: 1 / 4;
+  display: grid;
+  margin: calc(var(--space-pad) * -1) calc(var(--space-pad) * -1) 0 0;
+  container-type: size;
+  z-index: 1;
+
+  & > * {
+    grid-area: 1 / 1;
+  }
+}
+
+/* 그리기 ───────────────────────────────────────────────── */
+.arcs__ring {
+  --k: var(--ring-index);
+
+  --ring-thickness: calc(8 * pow(2, var(--k)));
+  --ring-inner: calc(60 + 8 * (pow(2, var(--k)) - 1) + 4 * var(--k));
+  --ring-outer: calc(var(--ring-inner) + var(--ring-thickness));
+
+  /* IF */
+  --is-odd: mod(var(--k), 2);
+  --breaks: max(0, var(--k) - 3);
+  --is-outer: max(0, var(--k) - 4);
+
+  --arc-length: calc(
+    (
+        var(--length-base) + var(--length-step) * var(--k) +
+          var(--length-break) * var(--breaks)
+      ) *
+      (1 - var(--is-outer)) + var(--outer-length) * var(--is-outer)
+  );
+
+  --arc-start: calc(
+    var(--start-base) + var(--start-step) * var(--k) + var(--start-zigzag) *
+      var(--is-odd) + var(--start-break) * var(--breaks)
+  );
+
+  /* 같 줄 2째 호 */
+  --pair-length: calc(
+    (var(--pair-total) - var(--arc-length)) *
+      clamp(0, var(--pair-total) - var(--arc-length) - 2, 1) *
+      (1 - var(--is-outer))
+  );
+  --pair-gap: calc((32 - var(--pair-total)) / 2);
+
+  /* 칸->각도 */
+  --edge-1: calc(var(--arc-length) * var(--arc-module));
+  --edge-2: calc((var(--arc-length) + var(--pair-gap)) * var(--arc-module));
+  --edge-3: calc(
+    (var(--arc-length) + var(--pair-gap) + var(--pair-length)) *
+      var(--arc-module)
+  );
+
+  /* 단위 실제 길이고 */
+  --radius-in: calc(var(--ring-inner) * var(--arc-unit));
+  --radius-out: calc(var(--ring-outer) * var(--arc-unit));
+
+  /* 칠하기 */
+  background: conic-gradient(
+    from calc(var(--arc-start) * var(--arc-module)) at var(--arc-cx)
+      var(--arc-cy),
+    var(--color-ink) 0deg var(--edge-1),
+    transparent var(--edge-1) var(--edge-2),
+    var(--color-ink) var(--edge-2) var(--edge-3),
+    transparent var(--edge-3)
+  );
+  mask: radial-gradient(
+    circle at var(--arc-cx) var(--arc-cy),
+    transparent var(--radius-in),
+    #000 var(--radius-in) var(--radius-out),
+    transparent var(--radius-out)
+  );
+}
+
+/* ===========================  5. COMPONENTS  =========================== */
+
+/* 헤더 ───────────────────────────────────────────────── */
+.poster__header {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-gap);
+  font-size: var(--font-size-meta);
+  z-index: 3;
+}
+
+/* 타이틀 ───────────────────────────────────────────────── */
+.poster__heading {
+  grid-column: 1 / 10;
+  grid-row: 2;
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.6rem, 1.4vw, 1.4rem);
+}
+
+.poster__title {
+  margin-left: -0.06em;
+  font-size: var(--font-size-title);
+  line-height: 0.78;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.poster__subtitle {
+  font-size: var(--font-size-subtitle);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  z-index: 2;
+}
+
+/* 중간에 안 끊기게 */
+.poster__subtitle-part {
+  white-space: nowrap;
+}
+
+/* 프로그램 ───────────────────────────────────────────────── */
+.program {
+  grid-column: 1 / 4;
+  grid-row: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1em;
+  max-width: 40ch;
+  z-index: 2;
+}
+
+.program__row {
+  display: flex;
+  align-items: baseline;
+  gap: 1ch;
+}
+
+.program__term {
+  flex: 0 0 9ch;
+  font-size: var(--font-size-meta);
+  opacity: 0.55;
+}
+
+.program__detail {
+  flex: 1;
+}
+
+/* 곡목 하나 = 한 줄 */
+.program__work {
+  display: block;
+}
+
+/* 작품 ───────────────────────────────────────────────── */
+.opus {
+  grid-column: 4 / 8;
+  grid-row: 3;
+  align-self: end;
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(0.6rem, 1.6vw, 1.8rem);
+  z-index: 2;
+}
+
+.opus__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.opus__number {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3ch;
+}
+
+.opus__prefix {
+  font-size: var(--font-size-meta);
+}
+
+.opus__value {
+  font-size: var(--font-size-opus);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums; /* 모든 숫자 폭이 같-> 좌우 끝 일치 */
+}
+
+.opus__caption {
+  font-size: var(--font-size-meta);
+  line-height: 1.2;
+  white-space: nowrap;
+
+  &::before {
+    content: '— ';
+  }
+}
+
+/* footer ────────────────────────────────────────────────────── */
+.poster__footer {
+  grid-column: 1 / -1;
+  grid-row: 4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.6em var(--space-gap);
+  padding-top: 0.8em;
+  border-top: 1.5px solid currentColor;
+  font-size: var(--font-size-meta);
+  z-index: 3;
+}
+
+/* 세로 ─────────────────────────── */
+.poster__credit {
+  position: absolute;
+  top: 50%;
+  right: calc(var(--space-pad) * 0.45);
+  transform: translate(50%, -50%) rotate(-90deg) translateY(-50%);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+/* ===========================  6. 글자 색반전  =========================== */
+.u-blend {
+  color: var(--blend-color, #fff);
+  mix-blend-mode: var(--blend-mode, difference);
+}
+
+/* ===========================  7. Media Query  =========================== */
+
+/* WEB 1440 = 기본 */
+
+/* TAB 가로 */
+@media (640px < width < 1440px) and (orientation: landscape) {
+  :root {
+    --grid-columns: 8;
+    --font-size-title: clamp(4rem, 1rem + 6vw + 5vh, 10rem);
+  }
+
+  .arcs {
+    grid-column: 3 / -1;
+    --arc-cx: 60%;
+    --arc-cy: 56%;
+    --start-base: 4;
+    --start-step: 3;
+    --start-zigzag: -2;
+    --start-break: 6;
+    --length-base: 6;
+    --length-step: 1;
+    --length-break: 4;
+    --pair-total: 14;
+    --outer-length: 24;
+  }
+
+  .poster__heading {
+    grid-column: 1 / 7;
+  }
+  .program {
+    grid-column: 1 / 4;
+  }
+  .opus {
+    grid-column: 4 / -1;
+  }
+}
+
+/* TAB 세로 */
+@media (640px < width < 1440px) and (orientation: portrait) {
+  :root {
+    --grid-columns: 8;
+    --font-size-title: clamp(5rem, 2rem + 10vh, 11rem);
+    --font-size-opus: clamp(1.35rem, -0.4rem + 4vw, 3rem);
+  }
+
+  .arcs {
+    grid-column: 2 / -1;
+    grid-row: 1 / 3;
+    --arc-cx: 55%;
+    --arc-cy: 35%;
+    --start-base: 10;
+    --start-step: -2;
+    --start-zigzag: 4;
+    --start-break: -4;
+    --length-base: 10;
+    --length-step: -1;
+    --length-break: 5;
+    --pair-total: 14;
+    --outer-length: 20;
+  }
+
+  .poster__header {
+    grid-column: 5 / -1;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .poster__heading {
+    display: contents;
+  }
+
+  .poster__subtitle {
+    grid-column: 2 / 5;
+    grid-row: 1;
+  }
+
+  .poster__title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    margin: 0;
+    line-height: 0.8;
+    text-align: right;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .program {
+    grid-column: 2 / 7;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 24ch), 1fr));
+    gap: 1em var(--space-gap);
+    max-width: none;
+  }
+
+  .program__row:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .opus {
+    grid-column: 7 / -1;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-auto-flow: row dense;
+    justify-content: start;
+    align-items: baseline;
+    gap: 0.5em 0.5ch;
+    --blend-color: var(--color-ink);
+    --blend-mode: normal;
+  }
+
+  /* 제목 · op. · 숫자가 표의 칸이 됨 */
+  .opus__item,
+  .opus__number {
+    display: contents;
+  }
+
+  /* 제목 칸을 오른쪽 끝에 붙여 "— op."가 한 줄로, 대시는 제목 뒤 */
+  .opus__caption {
+    grid-column: 1;
+    justify-self: end;
+
+    &::before {
+      content: none;
+    }
+    &::after {
+      content: '\00a0—'; /* 대시만 따로 줄바꿈되지 않게 */
+    }
+  }
+  .opus__prefix {
+    grid-column: 2;
+  }
+  .opus__value {
+    grid-column: 3;
+  }
+
+  .poster__footer {
+    grid-column: 2 / -1;
+  }
+}
+
+/* 모바일 */
+@media (width <= 640px) {
+  :root {
+    --grid-columns: 4;
+    --font-size-title: clamp(3rem, 18.5vw, 8rem);
+  }
+
+  .poster {
+    --color-paper: oklch(16% 0 0);
+    --color-ink: oklch(96% 0.01 95);
+    grid-template-rows: repeat(6, auto);
+    row-gap: var(--space-gap);
+  }
+
+  .poster__heading {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    align-self: start;
+  }
+
+  .poster__title {
+    margin: 0 0 0.1em -0.05em;
+    line-height: 0.82;
+    white-space: normal;
+  }
+
+  .poster__header {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15em;
+  }
+
+  .arcs {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    aspect-ratio: 1 / 1.15;
+    margin: 0 calc(var(--space-pad) * -1);
+    --arc-cx: 50%;
+    --arc-cy: 93%;
+    --start-base: 26;
+    --start-step: 1;
+    --start-zigzag: -4;
+    --start-break: 3;
+    --length-base: 5;
+    --length-step: 2;
+    --length-break: -3;
+    --pair-total: 18;
+    --outer-length: 21;
+  }
+
+  .opus {
+    grid-column: 1 / -1;
+    grid-row: 4;
+    justify-content: space-between;
+    --blend-color: var(--color-ink);
+    --blend-mode: normal;
+  }
+
+  .program {
+    grid-column: 1 / -1;
+    grid-row: 5;
+    max-width: none;
+  }
+
+  .program__row {
+    flex-direction: column;
+    gap: 0.1em;
+  }
+  .program__term {
+    flex: none;
+  }
+
+  .poster__footer {
+    grid-column: 1 / -1;
+    grid-row: 6;
+    flex-direction: column;
+    align-items: flex-start;
+    --blend-color: var(--color-ink);
+    --blend-mode: normal;
+  }
+}

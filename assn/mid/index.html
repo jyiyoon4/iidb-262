@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Beethoven Redesign</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <main class="poster">
+      <header class="poster__header u-blend">
+        <span>tonhalle · grosser saal</span>
+        <span>dienstag 22.02.1955 · 20.15 uhr</span>
+      </header>
+
+      <div class="arcs" aria-hidden="true">
+        <div class="arcs__ring" style="--ring-index: 0"></div>
+        <div class="arcs__ring" style="--ring-index: 1"></div>
+        <div class="arcs__ring" style="--ring-index: 2"></div>
+        <div class="arcs__ring" style="--ring-index: 3"></div>
+        <div class="arcs__ring" style="--ring-index: 4"></div>
+        <div class="arcs__ring" style="--ring-index: 5"></div>
+      </div>
+
+      <div class="poster__heading">
+        <h1 class="poster__title u-blend">beethoven</h1>
+        <p class="poster__subtitle u-blend">
+          <span class="poster__subtitle-part">4. Extrakonzert</span>
+          <span class="poster__subtitle-part">der Tonhalle-Gesellschaft</span>
+        </p>
+      </div>
+
+      <div class="program">
+        <div class="program__row">
+          <span class="program__term">leitung</span>
+          <span class="program__detail">carl schuricht</span>
+        </div>
+        <div class="program__row">
+          <span class="program__term">solist</span>
+          <span class="program__detail">wolfgang schneiderhan</span>
+        </div>
+        <div class="program__row">
+          <span class="program__term">beethoven</span>
+          <span class="program__detail">
+            <span class="program__work">ouvertüre zu «coriolan»</span>
+            <span class="program__work">violinkonzert in d-dur</span>
+            <span class="program__work">siebente sinfonie in a-dur</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="opus u-blend">
+        <div class="opus__item">
+          <span class="opus__number">
+            <span class="opus__prefix">op.</span>
+            <span class="opus__value">62</span>
+          </span>
+          <span class="opus__caption">coriolan</span>
+        </div>
+        <div class="opus__item">
+          <span class="opus__number">
+            <span class="opus__prefix">op.</span>
+            <span class="opus__value">61</span>
+          </span>
+          <span class="opus__caption">violinkonzert</span>
+        </div>
+        <div class="opus__item">
+          <span class="opus__number">
+            <span class="opus__prefix">op.</span>
+            <span class="opus__value">92</span>
+          </span>
+          <span class="opus__caption">7. sinfonie</span>
+        </div>
+      </div>
+
+      <footer class="poster__footer u-blend">
+        <span>vorverkauf: tonhalle-kasse, hug, jecklin, kuoni</span>
+        <span>karten fr. 3.50 – 9.50</span>
+      </footer>
+
+      <p class="poster__credit u-blend">Information Interaction Design Basic</p>
+    </main>
+  </body>
+</html>
